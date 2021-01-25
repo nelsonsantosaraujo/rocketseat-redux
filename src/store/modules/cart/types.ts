@@ -4,7 +4,7 @@ export interface IProduct {
   price: number;
 }
 export interface ICartItem{
-  product: IProduct[];
+  product: IProduct;
   quantity: number;
 }
 export interface ICartState {
