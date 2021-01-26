@@ -4,6 +4,7 @@ import { addProductToCartFail, addProductToCartRequest, addProductToCartSuccess 
 
 import api from '../../../services/api';
 import { AxiosResponse } from 'axios';
+import { ActionTypes } from './types';
 
 type CheckProductStockRequest = ReturnType<typeof addProductToCartRequest>;
 
@@ -29,5 +30,5 @@ function* checkProducStock({payload}: CheckProductStockRequest) {
 }
 
 export default all([
-  takeLatest('ADD_PRODUCT_TO_CART_REQUEST', checkProducStock)
+  takeLatest(ActionTypes.addProducToCartRequest, checkProducStock)
 ]);
